@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Скрипник ПІ 19-01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div></div>
+    <div id="bbutton">
+    <button id="back">Назад</button>
+    <button id="next">Вперед</button>
+    </div>
+
+    <style>
+        div {
+            width: 500px;
+            height: 350px;
+            border: 1px solid black;
+            margin: 0 auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #bbutton {
+         text-align: center; 
+         border: 0px solid black;  
+        }
+
+    </style>
+    
+    <script>
+        const arrImages = [
+        "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2016/03/27/22/22/fox-1284512_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2015/10/12/15/46/animal-984573_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2017/02/07/16/47/kingfisher-2046453_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2013/04/04/12/34/mountains-100367_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2018/07/14/17/46/raccoon-3538081_960_720.jpg",
+            "https://gohighbrow.com/wp-content/uploads/2015/05/7-The-Starry-Night.jpg"
+        ];
+
+        let i = 0;
+        const aImage = document.querySelector('div');
+        const buttonNextImage = document.getElementById('next');
+        const buttonBackImage = document.getElementById('back');
+        aImage.style.backgroundImage = `url(${arrImages[i]})`;
+        buttonNextImage.addEventListener('click', (event) => {
+            i++;
+            if (i == arrImages.length) i = 0;
+            aImage.style.backgroundImage = `url(${arrImages[i]})`;
+        });
+        buttonBackImage.addEventListener('click', (event) => {
+            if (i == 0) i = arrImages.length;
+            i--;
+            aImage.style.backgroundImage = `url(${arrImages[i]})`;
+        });
+    </script>
+</body>
+</html>

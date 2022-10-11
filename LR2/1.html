@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Скрипник ПІ 19-01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <form>
+        <label for="name" >Ім'я</label>
+        <input type="text" name="name" placeholder="Введіть імя">
+        <input type="checkbox" name="icecream">
+        <label for="icecream">Морозиво</label>
+        <input type="checkbox" name="chocolate">
+        <label for="chocolate">Шоколад</label>
+        <button name="send">Відправити</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        form.name.addEventListener("focus", (event) => {
+            console.log("Впишіть сюди своє ім'я:");
+        });
+
+        form.icecream.addEventListener("change", (event) => {
+            console.log("Ви обрали морозиво");
+        });
+
+        form.chocolate.addEventListener("change", (event) => {
+            console.log("Ви обрали шоколад");
+        });
+
+        form.send.addEventListener("click", (event) => {
+            event.preventDefault();
+            alert("Дякуємо за участь в опитуванні");
+            console.clear();
+            form.reset();
+        });
+    </script>
+</body>
+</html>

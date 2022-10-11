@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Скрипник ПІ 19-01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <button id="buttonOpen">Відкрити документ</button>
+    <script>
+        let buttonControlCurrent = document.getElementById('buttonOpen');
+        buttonControlCurrent.addEventListener('click', () => {
+            if (confirm("Щоб вікрити другий документ натисніть ОК, щоб закрити - Відміна")) window.open();
+            else window.close();
+        });
+    </script>
+</body>
+</html>
